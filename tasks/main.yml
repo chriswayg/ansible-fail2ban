@@ -11,6 +11,14 @@
     - configuration
     - fail2ban
     - fail2ban-install
+  when: ansible_os_family == "Debian"
+
+- name: Ensure, that fail2ban is installed.
+  apk:
+    name: fail2ban
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Alpine"
 
 - name: update configuration file - /etc/fail2ban/fail2ban.local
   template:
