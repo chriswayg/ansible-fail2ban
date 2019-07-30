@@ -1,21 +1,8 @@
 # {{ ansible_managed }}
 
-# Fail2Ban configuration file.
-#
-# This file was composed for Debian systems from the original one
-#  provided now under /usr/share/doc/fail2ban/examples/jail.conf
-#  for additional examples.
-#
-# To avoid merges during upgrades DO NOT MODIFY THIS FILE
-# and rather provide your changes in /etc/fail2ban/jail.local
-#
-# Author: Yaroslav O. Halchenko <debian@onerussian.com>
-#
-# $Revision$
-#
-
-# The DEFAULT allows a global definition of the options. They can be overridden
-# in each jail afterwards.
+# Fail2Ban local configuration file.
+# Overrides changes in the main jail file, /etc/fail2ban/jail.conf
+# Use this file to change local settings. 
 
 [DEFAULT]
 
