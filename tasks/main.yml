@@ -1,6 +1,6 @@
 # tasks file for fail2ban
 ---
-- name: install
+- name: Ensure, that fail2ban is installed on Debian.
   apt:
     name: "{{ fail2ban_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
@@ -12,7 +12,7 @@
     - fail2ban-install
   when: ansible_os_family == "Debian"
 
-- name: Ensure, that fail2ban is installed.
+- name: Ensure, that fail2ban is installed on Alpine.
   apk:
     name: fail2ban
     state: present
@@ -87,7 +87,7 @@
     - fail2ban
     - fail2ban-jails
 
-- name: start and enable service
+- name: start and enable service (this always shows up as changed)
   service:
     name: fail2ban
     state: "{{ service_default_state | default('started') }}"
