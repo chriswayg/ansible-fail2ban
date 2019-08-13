@@ -92,6 +92,7 @@
     name: fail2ban
     state: "{{ service_default_state | default('started') }}"
     enabled: "{{ service_default_enabled | default(true) | bool }}"
+  changed_when: false
   tags:
     - configuration
     - fail2ban
