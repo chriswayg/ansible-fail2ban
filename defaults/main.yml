@@ -4,8 +4,11 @@ fail2ban_loglevel: "{{ 'INFO' if (ansible_distribution == 'Ubuntu' and ansible_d
 fail2ban_logtarget: /var/log/fail2ban.log
 fail2ban_syslog_target: /var/log/fail2ban.log
 fail2ban_syslog_facility: 1
-fail2ban_socket: /var/run/fail2ban/fail2ban.sock
-fail2ban_pidfile: /var/run/fail2ban/fail2ban.pid
+# fail2ban_socket: /var/run/fail2ban/fail2ban.sock
+# fail2ban_pidfile: /var/run/fail2ban/fail2ban.pid
+# Try this for Debian 10
+fail2ban_socket: /run/fail2ban/fail2ban.sock
+fail2ban_pidfile: /run/fail2ban/fail2ban.pid
 fail2ban_dbpurgeage: 86400
 
 ## Only 'sendmail' or 'mail' can be used here (this also changes the name of the fail2ban_action).
